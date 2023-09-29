@@ -6,8 +6,6 @@ import SunEditor from "suneditor-react";
 
 import formatHTML from "../../utils/formatHTML";
 import useWindowDimensions from "../../hooks/useWindowimensions";
-import "katex/dist/katex.min.css";
-import "suneditor/dist/css/suneditor.min.css"; // Import Sun TextEditor's CSS File
 
 import ResizeHandle from "./ResizeHandle";
 import { textExamples } from "./editorData";
@@ -47,10 +45,7 @@ const ResizableContainer = () => {
   };
 
   return (
-    <div
-
-      className={styles.Container}
-    >
+    <div className={styles.Container}>
       <PanelGroup direction={orientation}>
         <Panel className={styles.Panel} defaultSize={60} order={1}>
           <div id="text-editor" className={styles.PanelContent}>
@@ -67,7 +62,9 @@ const ResizableContainer = () => {
           </div>
         </Panel>
 
-        <ResizeHandle direction={orientation === "horizontal" ? "vertical": "horizontal"}/>
+        <ResizeHandle
+          direction={orientation === "horizontal" ? "vertical" : "horizontal"}
+        />
 
         <Panel className={styles.Panel} defaultSize={40} order={2}>
           <PanelGroup className={styles.Panel} direction="vertical">
@@ -117,15 +114,19 @@ const ResizableContainer = () => {
                     mountOnEnter // <<<
                     unmountOnExit={false} // <<<div
                   >
-                <Panel order={1} className={styles.Panel}>
-                  <div
-                    style={{ overflowY: "scroll", padding: 10, maxHeight: '60vh' }}
-                    id="text-preview"
-                    className={styles.PanelContent}
-                  >
-                    <div ref={contentRef}></div>
-                  </div>
-                </Panel>
+                    <Panel order={1} className={styles.Panel}>
+                      <div
+                        style={{
+                          overflowY: "scroll",
+                          padding: 10,
+                          maxHeight: "60vh",
+                        }}
+                        id="text-preview"
+                        className={styles.PanelContent}
+                      >
+                        <div ref={contentRef}></div>
+                      </div>
+                    </Panel>
                   </Tab>
 
                   <Tab
@@ -134,32 +135,31 @@ const ResizableContainer = () => {
                     mountOnEnter // <<<
                     unmountOnExit={false} // <<<
                   >
-                <Panel className={styles.Panel} >
-                  <div className={styles.PanelContent}>
-                    <button
-                      style={{
-                        position: "absolute",
-                        right: 0,
-                        marginRight: 30,
-                        marginTop: 10,
-                      }}
-                      onClick={handleCopyClick}
-                    >
-                      Copy
-                    </button>
-                    <textarea
-                      defaultValue={formatHTML(value)}
-         
-                      style={{
-                        backgroundColor: "#222",
-                        color: "#fff",
-                        width: "100%",
-                        height: '60vh',
-                        overflowY: "scroll",
-                      }}
-                    ></textarea>
-                  </div>
-                </Panel>
+                    <Panel className={styles.Panel}>
+                      <div className={styles.PanelContent}>
+                        <button
+                          style={{
+                            position: "absolute",
+                            right: 0,
+                            marginRight: 30,
+                            marginTop: 10,
+                          }}
+                          onClick={handleCopyClick}
+                        >
+                          Copy
+                        </button>
+                        <textarea
+                          defaultValue={formatHTML(value)}
+                          style={{
+                            backgroundColor: "#222",
+                            color: "#fff",
+                            width: "100%",
+                            height: "60vh",
+                            overflowY: "scroll",
+                          }}
+                        ></textarea>
+                      </div>
+                    </Panel>
                   </Tab>
                 </Tabs>
               </>
