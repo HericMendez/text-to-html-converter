@@ -1,5 +1,5 @@
 {
-  "name": "text-to-html-converter",
+  "name": "draggable-grid",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,14 +14,15 @@
     "bootstrap": "^5.3.2",
     "darkmode-js": "^1.5.7",
     "html-react-parser": "^4.2.2",
+    "katex": "0.16.0",
     "prettier": "^3.0.3",
-    "react": "^16.14.0",
+    "react": "17.0.2",
     "react-beforeunload": "^2.6.0",
     "react-bootstrap": "^2.9.0",
     "react-dom": "17.0.2",
     "react-resizable-panels": "^0.0.55",
     "react-resize-panel": "^0.3.5",
-    "react-scripts": "4.0.0",
+    "react-scripts": "^5.0.1",
     "resize-observer-polyfill": "^1.5.1",
     "suneditor-react": "2.16.1"
   },
@@ -33,6 +34,6 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.9"
+    "vite": "^4.4.5"
   }
 }

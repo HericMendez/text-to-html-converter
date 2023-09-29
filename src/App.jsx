@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 
 import ResizableContainer from "./components/ResizableContainer";
@@ -8,25 +7,23 @@ import TopNavbar from "./components/Navbar";
 
 function App() {
   useEffect(() => {
-
     const handleBeforeUnload = (e) => {
       e.preventDefault();
-      e.returnValue = '';
+      e.returnValue = "";
     };
 
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
 
   return (
     <>
-<TopNavbar/>
-    
- <ResizableContainer/>
+      <TopNavbar />
 
+      <ResizableContainer />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { Panel, PanelGroup } from "react-resizable-panels";
 
 import { useState, useEffect, useRef } from "react";
 import SunEditor from "suneditor-react";
+import "suneditor/dist/css/suneditor.min.css";
 
 import formatHTML from "../../utils/formatHTML";
 import useWindowDimensions from "../../hooks/useWindowimensions";
@@ -119,7 +120,7 @@ const ResizableContainer = () => {
                         style={{
                           overflowY: "scroll",
                           padding: 10,
-                          maxHeight: "60vh",
+                          height: "60vh",
                         }}
                         id="text-preview"
                         className={styles.PanelContent}
