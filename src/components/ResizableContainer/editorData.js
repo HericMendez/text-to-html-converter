@@ -25,12 +25,13 @@ const sortedFontOptions = [
 export const editorOptions = {
   height: 200,
   mode: "classic",
-
+  defaultTag: "div",
+  "lang(In nodejs)": "pt_br",
   font: sortedFontOptions,
   formats: ["p", "blockquote", "h1", "h2", "h3"],
   imageMultipleFile: true,
   imageAccept: ".jpg, .jpeg, .png, .gif, .webp, .svg",
-  videoFileInput: false,
+  videoFileInput: true,
   audioFileInput: true,
   tabDisable: false,
   icons: {
@@ -41,23 +42,26 @@ export const editorOptions = {
     [
       "undo",
       "redo",
+      "print",
+      "save",
+      "fullScreen",
+      "showBlocks",
+      "preview",
+      "template",
       "font",
       "fontSize",
-      "formatBlock",
-      "paragraphStyle",
-      "blockquote",
+
+
       "bold",
       "underline",
       "italic",
       "strike",
       "subscript",
       "superscript",
+      "blockquote",
       "fontColor",
       "hiliteColor",
-      "textStyle",
       "removeFormat",
-      "outdent",
-      "indent",
       "align",
       "horizontalRule",
       "list",
@@ -65,18 +69,11 @@ export const editorOptions = {
       "table",
       "link",
       "image",
-      "video",
-      "audio",
-
-      "fullScreen",
-      "showBlocks",
-      "preview",
-      "print",
-      "save",
-      "template",
     ],
   ],
-
+  callBackSave: function (contents, isChanged) {
+    if (isChanged) alert("Função de salvamento ainda não funciona!");
+  },
   lineHeights: [
     {
       text: "Single",

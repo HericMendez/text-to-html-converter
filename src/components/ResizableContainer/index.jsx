@@ -24,9 +24,7 @@ const ResizableContainer = () => {
   };
 
   const [value, setValue] = useState("");
-  useEffect(() => {
-    console.log(editorRef.current.editor);
-  }, []);
+
 
   const onImageUploadError = (errorMessage, result, core) => {
     alert(errorMessage);
@@ -38,10 +36,9 @@ const ResizableContainer = () => {
     if (!contentRef.current) return;
     contentRef.current.innerHTML = value;
   }, [value]);
-  console.log(contentRef);
+
 
   const onChangeHandler = (content) => {
-    console.log(content);
     setValue(content);
   };
 
@@ -59,6 +56,8 @@ const ResizableContainer = () => {
               onCopy={(e) => console.log(e)}
               onImageUploadError={onImageUploadError}
               onChange={onChangeHandler}
+   
+
             />
           </div>
         </Panel>
@@ -115,7 +114,7 @@ const ResizableContainer = () => {
                     mountOnEnter // <<<
                     unmountOnExit={false} // <<<div
                   >
-                    <Panel order={1} className={styles.Panel}>
+                    <Panel defaultSize={70} order={1} className={styles.Panel}>
                       <div
                         style={{
                           overflowY: "scroll",
@@ -136,7 +135,7 @@ const ResizableContainer = () => {
                     mountOnEnter // <<<
                     unmountOnExit={false} // <<<
                   >
-                    <Panel className={styles.Panel}>
+                    <Panel defaultSize={30} className={styles.Panel}>
                       <div className={styles.PanelContent}>
                         <button
                           style={{
